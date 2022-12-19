@@ -7,6 +7,7 @@ export default function Home(props) {
             <div key={post.id}>
                 <h1 className='text-4xl'>{post.title}</h1>
                 <p>{post.date}</p>
+                <img src={post.photo.url}></img>
             </div>
             ))}
         </>

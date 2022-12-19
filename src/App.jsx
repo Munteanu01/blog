@@ -1,7 +1,6 @@
 import Home from "./components/Home"
 
-import { GraphQLClient } from 'graphql-request';
-import { gql } from 'graphql-request';
+import { GraphQLClient, gql } from 'graphql-request';
 const hygraph = new GraphQLClient('https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clbtaryeo1x2o01uf7y9oe08j/master');
 const QUERY = gql`
 { 
@@ -9,6 +8,12 @@ const QUERY = gql`
     id
     title
     date
+    content{
+      html
+    }
+    photo{
+      url
+    }
   } 
 }`
 const { posts } = await hygraph.request(QUERY)
