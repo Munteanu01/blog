@@ -5,9 +5,10 @@ export default function Home(props) {
         <>
             {posts.map((post) => (
             <div key={post.id}>
+                <img src={post.photo.url}></img>
                 <h1 className='text-4xl'>{post.title}</h1>
                 <p>{post.date}</p>
-                <img src={post.photo.url}></img>
+                <div dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
             </div>
             ))}
         </>

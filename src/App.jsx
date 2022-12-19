@@ -6,13 +6,13 @@ const QUERY = gql`
 { 
   posts {
     id
+    photo{
+      url
+    }
     title
     date
     content{
       html
-    }
-    photo{
-      url
     }
   } 
 }`
