@@ -1,7 +1,22 @@
+import Home from "./components/Home"
+
+import { GraphQLClient } from 'graphql-request';
+import { gql } from 'graphql-request';
+const hygraph = new GraphQLClient('https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clbtaryeo1x2o01uf7y9oe08j/master');
+const QUERY = gql`
+{ 
+  posts {
+    id
+    title
+    date
+  } 
+}`
+const { posts } = await hygraph.request(QUERY)
+
 export default function App() {
   return (
     <>
-    <h1 className="text-4xl font-bold">NA CA MERGE</h1>
+    <Home posts={posts}/>
     </>
   )
 }
