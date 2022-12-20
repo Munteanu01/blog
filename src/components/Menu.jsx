@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import { Squeeze as Hamburger, Squeeze } from 'hamburger-react'
+import { Squeeze as Squeeze } from 'hamburger-react'
 export default function Menu() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {
