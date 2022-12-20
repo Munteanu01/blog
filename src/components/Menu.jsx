@@ -7,12 +7,14 @@ export default function Menu() {
     setIsOpen(!isOpen);
     }
     return (
-    <nav className={`${isOpen ? 'block' : 'flex'}`}>
-        <a href=""><img className={`${isOpen ? 'hidden' : 'w-[48px] ml-5'}`} src="./img/logo.png"></img></a>
+    <nav>
+        <div className="md:inline-block flex">
+        <a href=""><img className="w-[48px] ml-5" src="./img/logo.png"></img></a>
         <button className="md:hidden flex ml-auto mr-3" onClick={toggleMenu}>
             <Squeeze size={30} duration={0.2} color="black" label="Show menu"/>
         </button>
-        <div className={`${isOpen ? 'block h-[100vh] md:h-[auto]' : 'hidden'} md:block `}>
+        </div>
+        <div className={`${isOpen ? 'block h-[100vh] md:h-[auto]' : 'hidden'} md:inline-block `}>
             <ul className="md:flex">
             <li><a className="px-5" href="">Menu 1</a></li>
             <li><a className="px-5" href="">Menu 2</a></li>
