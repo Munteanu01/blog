@@ -1,22 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@keyframes navOpacityOn {
-    from {
-        opacity: 0;
+@media (max-width: 768px) {
+    @keyframes navOpacityOn {
+        from {
+            opacity: 0;
+        }
+        50%{
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
-    50%{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+    @keyframes navOpacityOff{
+        from{
+            opacity: 1;
+        }
+        to{
+            opacity: 0;
+        }
     }
 }
-@keyframes navOpacityOff{
-    from{
-        opacity: 1;
-    }
-    to{
-        opacity: 0;
-    }
-}
+

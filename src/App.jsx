@@ -1,7 +1,10 @@
+import { Routes, Route } from 'react-router-dom';
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
-import Posts from "./components/Posts"
-import { Routes, Route } from 'react-router-dom';
+import All from "./components/All"
+import Tech from "./components/Tech"
+import Science from "./components/Science"
+
 
 
 
@@ -29,8 +32,10 @@ export default function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/Home" element={<Home posts={posts} />} />
-        <Route path="/Posts" element={<Posts />} />
+        <Route path="*" element={<Home posts={posts} />} />
+        <Route path="/All" element={<All />} />
+        <Route path="/Tech" element={<Tech />} />
+        <Route path="/Science" element={<Science />} />
       </Routes>
     </>
   );

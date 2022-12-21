@@ -11,9 +11,7 @@ export default function Menu() {
     }
     return (
     <nav className="flex justify-between top-0">
-        <a className="z-[2]" href="">
-            <img className="w-[48px] ml-5" src="./img/logo.png"></img>
-        </a>
+        <Link to="/Home" className="z-[2]"><img className="w-[48px] ml-5" src="./img/logo.png"></img></Link> 
         <button className="z-[2] md:hidden" onClick={toggleMenu}>
             <Squeeze size={30} duration={0.3} color="black" label="Show menu"/>
         </button>
@@ -25,7 +23,9 @@ export default function Menu() {
                     animationFillMode: 'both',
                 }}>
             <li><Link to="/Home">Home</Link></li>
-            <li><Link to="/Posts">Posts</Link></li>
+            <li><Link to="/All">All</Link></li>
+            <li><Link to="/Tech">Tech</Link></li>
+            <li><Link to="/Science">Science</Link></li>
             </ul>
         </div>
     </nav>
