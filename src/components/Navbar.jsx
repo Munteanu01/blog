@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-
-
 import { Squeeze as Squeeze } from 'hamburger-react'
+
+
 export default function Menu() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {

@@ -1,5 +1,5 @@
 import Home from "./components/Home"
-import Menu from "./components/Menu"
+import Navbar from "./components/Navbar"
 import Posts from "./components/Posts"
 import { Routes, Route } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const { posts } = await hygraph.request(QUERY)
 export default function App() {
   return (
     <>
-      <Menu />
+      <Navbar />
       <Routes>
         <Route path="/Home" element={<Home posts={posts} />} />
         <Route path="/Posts" element={<Posts />} />
