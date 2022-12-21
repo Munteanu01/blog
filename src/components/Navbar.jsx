@@ -12,20 +12,18 @@ export default function Menu() {
     return (
     <nav className="flex justify-between top-0">
         <Link to="/Home" className="z-[2]"><img className="w-[48px] ml-5" src="./img/logo.png"></img></Link> 
-        <button className="z-[2] md:hidden" onClick={toggleMenu}>
-            <Squeeze size={30} duration={0.3} color="black" label="Show menu"/>
-        </button>
-        <div className={`md:py-0 py-10 absolute md:static bg-white md:z-auto z-[1] w-full md:w-auto transition-all duration-[0.4s] ease-in-out ${isOpen ? 'top-[40px] ':'top-[-80px]'}`}>
-            <ul className="flex justify-between mx-20"
+        <button className="z-[2] md:hidden mr-5" onClick={toggleMenu}><Squeeze size={30} duration={0.3} color="black" label="Show menu"/></button>
+        <div className={`md:py-0 sm:py-7 absolute md:static bg-white md:z-auto z-[1] w-full md:w-auto transition-all duration-[0.4s] ease-in-out ${isOpen ? 'top-[40px] ':'top-[-80px]'}`}>
+            <ul className="sm:flex grid grid-cols-2 justify-between mx-24 font-semibold text-lg"
                 style={{
                     animationName: isOpen ? 'navOpacityOn' : 'navOpacityOff',
                     animationDuration: isOpen ? '300ms' : '150ms',
                     animationFillMode: 'both',
                 }}>
-            <li><Link to="/Home">Home</Link></li>
-            <li><Link to="/All">All</Link></li>
-            <li><Link to="/Tech">Tech</Link></li>
-            <li><Link to="/Science">Science</Link></li>
+            <li className="col-span-1 text-center pb-1" onClick={toggleMenu}><Link to="/Home">Home</Link></li>
+            <li className="col-span-1 text-center pb-1" onClick={toggleMenu}><Link to="/Tech">Tech</Link></li>
+            <li className="col-span-1 text-center pb-2" onClick={toggleMenu}><Link to="/Science">Science</Link></li>
+            <li className="col-span-1 text-center pb-2" onClick={toggleMenu}><Link to="/All">All</Link></li>
             </ul>
         </div>
     </nav>

@@ -5,7 +5,7 @@ export default function Home(props) {
     return(
         <>
             {posts.map((post) => (
-            <div className="max-w-sm" key={post.id}>
+            <div className="break-words max-w-full" key={post.id}>
                 <img src={post.photo.url}></img>
                 <h1 className='text-4xl'>{post.title}</h1>
                 <p>{post.date}</p>
