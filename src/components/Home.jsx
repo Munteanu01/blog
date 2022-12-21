@@ -1,11 +1,9 @@
 import React from 'react'
 import DOMPurify from "dompurify";
-import Menu from "./Menu"
 export default function Home(props) {
     const posts = props.posts
     return(
-        <>  
-            <Menu />
+        <>
             {posts.map((post) => (
             <div className="max-w-sm" key={post.id}>
                 <img src={post.photo.url}></img>

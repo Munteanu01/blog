@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from 'react';
+import { Link } from "react-router-dom";
+
+
 import { Squeeze as Squeeze } from 'hamburger-react'
 export default function Menu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,9 +24,8 @@ export default function Menu() {
                     animationDuration: isOpen ? '300ms' : '150ms',
                     animationFillMode: 'both',
                 }}>
-            <li><a className="" href="">Menu 1</a></li>
-            <li><a className="px-10" href="">Menu 2</a></li>
-            <li><a className="" href="">Menu 3</a></li>
+            <li><Link to="/Home">Home</Link></li>
+            <li><Link to="/Posts">Posts</Link></li>
             </ul>
         </div>
     </nav>
