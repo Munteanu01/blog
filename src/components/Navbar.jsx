@@ -9,7 +9,7 @@ export default function Menu() {
     setIsOpen(!isOpen);
     }
     return (
-    <nav className="flex  justify-between lg:justify-end lg:pt-10 md:pt-6 pt-1 md:ml-20 sticky top-0">
+    <nav className="flex  justify-between md:justify-end md:pt-10 pt-1 sticky top-0">
         <Link to="/Home" className="z-[2]"><img className="w-[48px] md:w-[58px] ml-5" src="./img/logo.png"></img></Link> 
         <button className="z-[2] md:hidden mr-5" onClick={toggleMenu}><img className="w-[24px]" src='/img/menu-white.png'alt=""/></button>
         <div className={`md:py-0 md:flex md:items-center sm:py-7 absolute md:static md:z-auto z-[1] w-full md:w-auto transition-all duration-[0.4s] ease-in-out ${isOpen ? 'top-[40px] ':'top-[-80px]'}`}>
