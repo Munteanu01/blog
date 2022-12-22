@@ -20,8 +20,11 @@ export default function Menu() {
                     animationFillMode: 'both',
                 }}>
             <li className="col-span-1 text-center pb-1 md:pb-0" onClick={toggleMenu}><Link to="/Home">Home</Link></li>
+            <span className="hidden md:inline-block">/</span>
             <li className="col-span-1 text-center pb-1 md:pb-0" onClick={toggleMenu}><Link to="/Tech">Tech</Link></li>
+            <span className="hidden md:inline-block">/</span>
             <li className="col-span-1 text-center pb-2 md:pb-0" onClick={toggleMenu}><Link to="/Science">Science</Link></li>
+            <span className="hidden md:inline-block">/</span>
             <li className="col-span-1 text-center pb-2 md:pb-0" onClick={toggleMenu}><Link to="/All">All</Link></li>
             </ul>
         </div>
