@@ -6,12 +6,12 @@ export default function Home(props) {
         <div className='mt-40 justify-between md:mx-40'>
             {posts.map((post) => (
             <div className="break-words max-w-md" key={post.id}>
-                <img src={post.photo.url}></img>
+                <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
                 <h1 className='text-4xl'>{post.title}</h1>
                 <p>{post.date}</p>
-                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content.html)}}></div>
             </div>
             ))}
         </div>
     )
 }
+//<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content.html)}}></div>
