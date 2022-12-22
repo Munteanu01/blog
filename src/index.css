@@ -24,5 +24,7 @@
 }
 body{
     font-family: 'Chivo Mono', monospace;
+    background-color: black;
+    color: white;
 }
 
