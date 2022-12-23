@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import All from "./components/All"
 import Tech from "./components/Tech"
 import Science from "./components/Science"
+import Post from "./components/Post"
 
 
 
@@ -15,6 +16,7 @@ const QUERY = gql`
 { 
   posts {
     id
+    slug
     photo{
       url
     }
@@ -36,6 +38,7 @@ export default function App() {
         <Route path="/All" element={<All />} />
         <Route path="/Tech" element={<Tech />} />
         <Route path="/Science" element={<Science />} />
+        <Route path="posts/:slug" element={<Post />} />
       </Routes>
     </>
   );
