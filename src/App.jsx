@@ -17,6 +17,9 @@ const QUERY = gql`
   posts {
     id
     slug
+    postType {
+      type
+    } 
     photo{
       url
     }
@@ -35,9 +38,9 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="*" element={<Home posts={posts} />} />
-        <Route path="/All" element={<All />} />
-        <Route path="/Tech" element={<Tech />} />
-        <Route path="/Science" element={<Science />} />
+        <Route path="/All" element={<All posts={posts}/>} />
+        <Route path="/Tech" element={<Tech posts={posts}/>} />
+        <Route path="/Science" element={<Science posts={posts}/>} />
         <Route path="posts/:slug" element={<Post posts={posts} />} />
       </Routes>
     </>
