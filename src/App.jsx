@@ -38,7 +38,7 @@ export default function App() {
         <Route path="/All" element={<All />} />
         <Route path="/Tech" element={<Tech />} />
         <Route path="/Science" element={<Science />} />
-        <Route path="posts/:slug" element={<Post />} />
+        <Route path="posts/:slug" element={<Post posts={posts} />} />
       </Routes>
     </>
   );
