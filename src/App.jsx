@@ -39,18 +39,18 @@ const QUERY = gql`
   } 
 }`
 const { posts } = await hygraph.request(QUERY)
-
+const mostRecentPosts = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
 export default function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="*" element={<Home posts={posts} />} />
-        <Route path="/All" element={<All posts={posts}/>} />
-        <Route path="/Tech" element={<Tech posts={posts}/>} />
-        <Route path="/Science" element={<Science posts={posts}/>} />
-        <Route path="posts/:slug" element={<Post posts={posts} />} />
-        <Route path="author/:slug" element={<Author posts={posts} />} />
+        <Route path="*" element={<Home posts={mostRecentPosts} />} />
+        <Route path="/All" element={<All posts={mostRecentPosts}/>} />
+        <Route path="/Tech" element={<Tech posts={mostRecentPosts}/>} />
+        <Route path="/Science" element={<Science posts={mostRecentPosts}/>} />
+        <Route path="posts/:slug" element={<Post posts={mostRecentPosts} />} />
+        <Route path="author/:slug" element={<Author posts={mostRecentPosts} />} />
       </Routes>
     </>
   );

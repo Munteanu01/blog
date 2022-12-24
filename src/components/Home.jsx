@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 export default function Home(props) {
     const posts = props.posts
-    const mostRecentPost = posts.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-    const mostRecentPosts = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)).slice(1, 7);
+    const mostRecentPost = posts[0];
+    const mostRecentPosts = posts.slice(1, 7);
     return(
         <div className='md:mx-32 mx-12 mt-20'>
             <div className='mx-auto max-w-lg'>

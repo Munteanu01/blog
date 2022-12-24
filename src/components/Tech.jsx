@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Tech(props) {
     const posts = props.posts
-    const mostRecentPosts = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
     return(
     <>
         <h1>Tech</h1>
         <div>
-            {mostRecentPosts.map((post) => {
+            {posts.map((post) => {
                 if (post.postType.type === "Tech") {
                 return (
                 <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto border-2 border-white" key={post.id}>
