@@ -5,6 +5,7 @@ import All from "./components/All"
 import Tech from "./components/Tech"
 import Science from "./components/Science"
 import Post from "./components/Post"
+import Author from "./components/Author"
 
 
 
@@ -17,6 +18,13 @@ const QUERY = gql`
   posts {
     id
     slug
+    author{
+      name
+      slug
+      posts {
+        id
+      }
+    }
     postType {
       type
     } 
@@ -42,6 +50,7 @@ export default function App() {
         <Route path="/Tech" element={<Tech posts={posts}/>} />
         <Route path="/Science" element={<Science posts={posts}/>} />
         <Route path="posts/:slug" element={<Post posts={posts} />} />
+        <Route path="author/:slug" element={<Author posts={posts} />} />
       </Routes>
     </>
   );

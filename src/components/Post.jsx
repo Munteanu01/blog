@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 export default function Post(props) {
     const {slug} = useParams()
@@ -8,6 +8,7 @@ export default function Post(props) {
     return(
         <div className="max-w-lg mx-auto pt-20">
         <h1>This is {post.title}</h1>
+        <h1>Written by <Link to={`/author/${post.author.slug}`}>{post.author.name}</Link></h1>
         <img src={post.photo.url} alt="" />
         <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content.html)}}></div>
         </div>
