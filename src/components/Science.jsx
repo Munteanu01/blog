@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Science(props) {
     const posts = props.posts
+    const mostRecentPosts = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
     return(
     <>
         <h1>Science</h1>
         <div>
-            {posts.map((post) => {
+            {mostRecentPosts.map((post) => {
                 if (post.postType.type === "Science") {
                 return (
                 <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto border-2 border-white" key={post.id}>
