@@ -18,16 +18,12 @@ export default function Menu() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll)
     })
-
-
-
-
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {
     setIsOpen(!isOpen);
     }
     return (
-    <nav className={`bg-black flex justify-between lg:justify-end lg:pt-10 md:pt-6 pt-1 md:ml-20 sticky ${visible ? "top-0" : ""}`}>
+    <nav className={`bg-black flex justify-between lg:justify-end md:ml-20 sticky transition-all duration-[0.4s] ease-in-out ${visible ? "top-0" : "top-[-150px]"}`}>
         <Link to="/Home" className="z-[2]"><img className="w-[48px] md:w-[58px] ml-5" src="../img/logo.png"></img></Link> 
         <button className="z-[2] md:hidden mr-5" onClick={toggleMenu}><img className="w-[24px]" src='/img/menu-white.png'alt=""/></button>
         <div className={`bg-black md:py-0 md:flex md:items-center sm:py-7 absolute md:static md:z-auto z-[1] w-full md:w-auto transition-all duration-[0.4s] ease-in-out ${isOpen ? 'top-[40px] ':'top-[-80px]'}`}>
