@@ -24,8 +24,10 @@ export default function Menu() {
     }
     return (
     <nav className={`dark:bg-black bg-white flex justify-between lg:justify-end lg:py-2 md:ml-20 sticky transition-all duration-[0.4s] ${visible ? "top-0" : "top-[-150px]"}`}>
-        <Link to="/Home" className="z-[2]"><img className="w-[48px] md:w-[50px] ml-5" src="../img/logo-light.png"></img></Link> 
-        <button className="z-[2] md:hidden mr-5" onClick={toggleMenu}><img className="w-[24px]" src='/img/menu-light.png'alt=""/></button>
+        <Link to="/Home" className="z-[2] hidden dark:block"><img className="w-[48px] md:w-[50px] ml-5" src="../img/logo-light.png"></img></Link> 
+        <Link to="/Home" className="z-[2] block dark:hidden"><img className="w-[48px] md:w-[50px] ml-5" src="../img/logo-dark.png"></img></Link> 
+        <button className="z-[2] md:hidden mr-5 hidden dark:block" onClick={toggleMenu}><img className="w-[24px]" src='/img/menu-light.png'alt=""/></button>
+        <button className="z-[2] md:hidden mr-5 block dark:hidden" onClick={toggleMenu}><img className="w-[24px]" src='/img/menu-dark.png'alt=""/></button>
         <div className={`dark:bg-black bg-white md:py-0 md:flex md:items-center sm:py-7 absolute md:static md:z-auto z-[1] w-full md:w-auto transition-all duration-[0.4s] ease-in-out ${isOpen ? 'top-[40px] ':'top-[-80px]'}`}>
             <ul className="sm:flex grid grid-cols-2 justify-between mx-24 md:w-[40vw] lg:w-[33vw] md:max-w-[550px] md:mr-20 lg:mr-28 lg:ml-10 md:ml-10 font-semibold text-lg"
                 style={{
