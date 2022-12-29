@@ -32,6 +32,7 @@ const QUERY = gql`
       url
     }
     title
+    description
     date
     content{
       html

@@ -5,15 +5,17 @@ export default function Home(props) {
     const mostRecentPost = posts[0];
     const mostRecentPosts = posts.slice(1, 7);
     return(
-        <div className='md:mx-32 mx-12 mt-20'>
-            <div className='mx-auto max-w-lg'>
-                <Link to={`/posts/${mostRecentPost.slug}`}>
-                <h1 className='text-4xl'>{mostRecentPost.title}</h1>
-                <h1 className='text-4xl'>{mostRecentPost.date}</h1>
-                <img className='w-full' src={mostRecentPost.photo.url} alt="" />
-                </Link>
+        <div className='mt-20'>
+            <div className='mx-auto max-w-4xl flex justify-between'>
+                <Link to={`/posts/${mostRecentPost.slug}`}><img className='max-w-xl' src={mostRecentPost.photo.url} alt="" /></Link>
+                <div className='max-w-xs'>
+                    <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-4xl'>{mostRecentPost.title}</h1></Link>
+                    <p>{mostRecentPost.description}</p>
+                    <Link to={`/author/${mostRecentPost.author.slug}`}><p className="pt-10">{mostRecentPost.author.name}</p></Link>
+                    <p className=''>{mostRecentPost.date}</p>
+                </div>
             </div>
-            <div className='sm:grid gap-5 grid-cols-2 lg:grid-cols-3 lg:gap-3'>
+            <div className='sm:grid gap-5 grid-cols-2 lg:gap-3'>
             {mostRecentPosts.map((post) => (
             <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto border-2 border-white" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
