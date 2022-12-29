@@ -5,13 +5,13 @@ export default function Home(props) {
     const mostRecentPost = posts[0];
     const mostRecentPosts = posts.slice(1, 7);
     return(
-        <div className='md:mx-32 mx-12 mt-20'>
-            <div className='sm:grid gap-5 grid-cols-2 lg:grid-cols-3 lg:gap-3'>
-                <div className='mx-auto col-span-3 grid grid-cols-4'>
-                    <div className='col-span-2'>
-                    <Link to={`/posts/${mostRecentPost.slug}`}><img className='w-full p-3' src={mostRecentPost.photo.url} alt="" /></Link>
+        <div className='mt-20'>
+            <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-10'>
+                <div className='mx-auto col-span-3 grid grid-cols-5 gap-20'>
+                    <div className='col-span-3'>
+                    <Link to={`/posts/${mostRecentPost.slug}`}><img className='w-full' src={mostRecentPost.photo.url} alt="" /></Link>
                     </div>
-                    <div className='col-span-1'>
+                    <div className='col-span-2'>
                     <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-3xl'>{mostRecentPost.title}</h1></Link>
                     <p className='py-10'>{mostRecentPost.description}</p>
                     <Link to={`/author/${mostRecentPost.author.slug}`}><p className=''>{mostRecentPost.author.name}</p></Link>
@@ -20,9 +20,9 @@ export default function Home(props) {
                     </div>
                 </div>
             {mostRecentPosts.map((post) => (
-            <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto border-2 border-white" key={post.id}>
+            <div className="break-words w-full mx-auto" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
-                <div className='object-cover border-b-2 border-white'><img className=' w-full' src={post.photo.url}></img></div>
+                <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
                 <h1 className='text-2xl pt-2 text-center'>{post.date}</h1>
                 <h1 className='text-2xl pt-2 text-center'>{post.title}</h1>
                 </Link>
