@@ -37,13 +37,10 @@ export default function Menu() {
                     animationDuration: isOpen ? '300ms' : '150ms',
                     animationFillMode: 'both',
                 }}>
-            <li className="col-span-1 text-center pb-1 md:pb-0" onClick={toggleMenu}><Link to="/Home">Home</Link></li>
-            <span className="hidden md:inline-block">/</span>
-            <li className="col-span-1 text-center pb-1 md:pb-0" onClick={toggleMenu}><Link to="/Tech">Tech</Link></li>
-            <span className="hidden md:inline-block">/</span>
-            <li className="col-span-1 text-center pb-2 md:pb-0" onClick={toggleMenu}><Link to="/Science">Science</Link></li>
-            <span className="hidden md:inline-block">/</span>
-            <li className="col-span-1 text-center pb-2 md:pb-0" onClick={toggleMenu}><Link to="/All">All</Link></li>
+            <li className="col-span-1 text-center pb-1 md:pb-0" onClick={toggleMenu}><Link to="/Home">Home <span className="hidden md:inline-block">/</span></Link></li>
+            <li className="col-span-1 text-center pb-1 md:pb-0" onClick={toggleMenu}><Link to="/Tech">Tech <span className="hidden md:inline-block">/</span></Link></li>
+            <li className="col-span-1 text-center pb-2 md:pb-0" onClick={toggleMenu}><Link to="/Science">Science <span className="hidden md:inline-block">/</span></Link></li>
+            <li className="col-span-1 text-center pb-2 md:pb-0" onClick={toggleMenu}><Link to="/All">All <span className="hidden md:inline-block">/</span></Link></li>
             </ul>
         </div>
     </nav>
