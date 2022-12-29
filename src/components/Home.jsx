@@ -29,10 +29,13 @@ export default function Home(props) {
             ))}
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <form className='py-20 mt-28 md:max-w-md max-w-[290px] mx-auto grid md:grid-cols-3 grid-cols-1 gap-3'>
             <input className="form-input md:col-span-2 py-4 px-5 text-gray-900 leading-5 focus:outline-none focus:shadow-outline-blue-500" id="email" type="email" placeholder="Your email"/>
             <button className="bg-[#B2EF01] text-black py-3" type="submit">Subscribe</button>
             </form>
+=======
+>>>>>>> parent of 4ea0019 (Adding newsletter inputs)
 =======
 >>>>>>> parent of 4ea0019 (Adding newsletter inputs)
         </div>
