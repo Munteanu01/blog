@@ -12,10 +12,11 @@ export default function Home(props) {
                     <Link to={`/posts/${mostRecentPost.slug}`}><img className='w-full p-3' src={mostRecentPost.photo.url} alt="" /></Link>
                     </div>
                     <div className='col-span-1'>
-                    <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-4xl'>{mostRecentPost.title}</h1></Link>
-                    <p>{mostRecentPost.description}</p>
-                    <p>{mostRecentPost.author.name}</p>
+                    <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-3xl'>{mostRecentPost.title}</h1></Link>
+                    <p className='py-10'>{mostRecentPost.description}</p>
+                    <Link to={`/author/${mostRecentPost.author.slug}`}><p className=''>{mostRecentPost.author.name}</p></Link>
                     <p className=''>{mostRecentPost.date}</p>
+                    
                     </div>
                 </div>
             {mostRecentPosts.map((post) => (
