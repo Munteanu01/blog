@@ -5,21 +5,20 @@ export default function Home(props) {
     const mostRecentPost = posts[0];
     const mostRecentPosts = posts.slice(1, 7);
     return(
-        <div className='md:mx-32 mx-12 mt-20'>
-            <div className='mx-auto max-w-lg'>
+        <div className='mt-20 mx-auto max-w-[1025px]'>
+            <div className='max-w-lg'>
                 <Link to={`/posts/${mostRecentPost.slug}`}>
-                <h1 className='text-4xl'>{mostRecentPost.title}</h1>
-                <h1 className='text-4xl'>{mostRecentPost.date}</h1>
+                <h1 className=''>{mostRecentPost.title}</h1>
                 <img className='w-full' src={mostRecentPost.photo.url} alt="" />
                 </Link>
             </div>
-            <div className='sm:grid gap-5 grid-cols-2 lg:grid-cols-3 lg:gap-3'>
+            <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-3'>
             {mostRecentPosts.map((post) => (
-            <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto border-2 border-white" key={post.id}>
+            <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
-                <div className='object-cover border-b-2 border-white'><img className=' w-full' src={post.photo.url}></img></div>
-                <h1 className='text-2xl pt-2 text-center'>{post.date}</h1>
-                <h1 className='text-2xl pt-2 text-center'>{post.title}</h1>
+                <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
+                <h1 className='pt-2 text-center'>{post.date}</h1>
+                <h1 className='pt-2 text-center'>{post.title}</h1>
                 </Link>
             </div>
             ))}
