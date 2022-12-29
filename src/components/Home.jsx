@@ -11,10 +11,10 @@ export default function Home(props) {
                     <div className='col-span-2 lg:col-span-3  my-auto'>
                     <Link to={`/posts/${mostRecentPost.slug}`}><img className='w-full' src={mostRecentPost.photo.url} alt="" /></Link>
                     </div>
-                    <div className='col-span-2'>
-                    <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-3xl'>{mostRecentPost.title}</h1></Link>
-                    <p className='py-10 text-xs lg:text-base'>{mostRecentPost.description}</p>
-                    <Link to={`/author/${mostRecentPost.author.slug}`}><p className=''>{mostRecentPost.author.name}</p></Link>
+                    <div className='col-span-1'>
+                    <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-4xl'>{mostRecentPost.title}</h1></Link>
+                    <p>{mostRecentPost.description}</p>
+                    <p>{mostRecentPost.author.name}</p>
                     <p className=''>{mostRecentPost.date}</p>
                     </div>
                 </div>
