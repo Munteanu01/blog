@@ -5,7 +5,7 @@ export default function Home(props) {
     const mostRecentPost = posts[0];
     const mostRecentPosts = posts.slice(1, 7);
     return(
-        <div className='mt-20 mx-auto max-w-[1025px]'>
+        <div className='mt-20 mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
             <div className='max-w-lg'>
                 <Link to={`/posts/${mostRecentPost.slug}`}>
                 <h1 className=''>{mostRecentPost.title}</h1>

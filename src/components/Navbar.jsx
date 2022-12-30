@@ -23,7 +23,7 @@ export default function Menu() {
     setIsOpen(!isOpen);
     }
     return (
-    <nav className={`dark:bg-black bg-white flex justify-between mx-auto max-w-[1025px]
+    <nav className={`dark:bg-black bg-white flex justify-between mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl
         sticky transition-all duration-[0.4s] ${visible ? "top-0" : "top-[-150px]"}`}>
         <Link to="/Home" className="z-[2] hidden dark:block"><img className="w-[48px] ml-5 md:ml-0" src="../img/logo-light.png"></img></Link> 
         <Link to="/Home" className="z-[2] block dark:hidden"><img className="w-[48px] ml-5 md:ml-0" src="../img/logo-dark.png"></img></Link> 
