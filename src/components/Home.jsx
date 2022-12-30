@@ -6,21 +6,23 @@ export default function Home(props) {
     const mostRecentPosts = posts.slice(1, 7);
     return(
         <div className='mt-20 mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
-            <div className='max-w-xs sm:max-w-lg mx-auto'>
+            <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-3'>
+            <Link to={`/posts/${mostRecentPost.slug}`} className="lg:col-span-2 col-span-1 my-auto"><img className='md:max-w-full mx-auto sm:mx-0' src={mostRecentPost.photo.url} alt="" /></Link>
+            <div className='max-w-xs sm:max-w-lg mx-auto col-span-1'>
                 <Link to={`/posts/${mostRecentPost.slug}`}><h1 className=''>{mostRecentPost.title}</h1></Link>
-                <Link to={`/posts/${mostRecentPost.slug}`}><img className='md:max-w-full sm:max-w-md' src={mostRecentPost.photo.url} alt="" /></Link>
                 <p>{mostRecentPost.description}</p>
                 <Link to={`/author/${mostRecentPost.author.slug}`}><p>{mostRecentPost.author.name}</p></Link>
                 <p>{mostRecentPost.date}</p>
-                
             </div>
-            <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-3'>
             {mostRecentPosts.map((post) => (
-            <div className="break-words w-full sm:max-w-sm max-w-xs mt-10 mx-auto" key={post.id}>
+            <div className="break-words w-full sm:max-w-sm mt-10 mx-auto text-center" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
                 <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
-                <h1 className='pt-2 text-center'>{post.date}</h1>
-                <h1 className='pt-2 text-center'>{post.title}</h1>
+                <h1 className='pt-2'>{post.title}</h1>
+                <p>{post.description}</p>
+                <p>{post.author.name}</p>
+                <p className='pt-2'>{post.date}</p>
+
                 </Link>
             </div>
             ))}
