@@ -5,16 +5,16 @@ export default function Home(props) {
     const mostRecentPost = posts[0];
     const mostRecentPosts = posts.slice(1, 7);
     return(
-        <div className='mt-20 mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
-            <div className='max-w-lg'>
+        <div className='mt-20 mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
+            <div className='max-w-sm sm:max-w-lg'>
                 <Link to={`/posts/${mostRecentPost.slug}`}>
                 <h1 className=''>{mostRecentPost.title}</h1>
-                <img className='w-full' src={mostRecentPost.photo.url} alt="" />
+                <img className='md:max-w-full sm:max-w-md ' src={mostRecentPost.photo.url} alt="" />
                 </Link>
             </div>
             <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-3'>
             {mostRecentPosts.map((post) => (
-            <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto" key={post.id}>
+            <div className="break-words w-full max-w-sm mt-10 mx-auto" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
                 <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
                 <h1 className='pt-2 text-center'>{post.date}</h1>
