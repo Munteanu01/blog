@@ -7,7 +7,9 @@ export default function Home(props) {
     return(
         <div className='mt-20 mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
             <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-3'>
-            <Link to={`/posts/${mostRecentPost.slug}`} className="lg:col-span-2 col-span-1 my-auto"><img className='md:max-w-full mx-auto sm:mx-0' src={mostRecentPost.photo.url} alt="" /></Link>
+            <Link to={`/posts/${mostRecentPost.slug}`} className="lg:col-span-2 col-span-1 my-auto">
+                <img className='md:max-w-full mx-auto sm:mx-0' src={mostRecentPost.photo.url} alt="" />
+            </Link>
             <div className='max-w-md sm:max-w-lg mx-auto col-span-1'>
                 <Link to={`/posts/${mostRecentPost.slug}`}><h1 className=''>{mostRecentPost.title}</h1></Link>
                 <p>{mostRecentPost.description}</p>

@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export default function Science(props) {
+export default function Human(props) {
     const posts = props.posts
     return(
-    <>
-        <h1>Science</h1>
+    <div className="mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl">
+        <h1>Human</h1>
         <div>
             {posts.map((post) => {
-                if (post.postType.type === "Science") {
+                if (post.postType.type === "Human") {
                 return (
                 <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto border-2 border-white" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
@@ -22,6 +22,6 @@ export default function Science(props) {
                 return null;
             })}
         </div>
-        </>
+        </div>
     )
 }

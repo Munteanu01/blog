@@ -2,10 +2,11 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import All from "./components/All"
-import Tech from "./components/Tech"
-import Science from "./components/Science"
 import Post from "./components/Post"
 import Author from "./components/Author"
+import Mind from "./components/Mind"
+import Human from "./components/Human"
+import Philosophy from "./components/Philosophy"
 
 
 
@@ -48,8 +49,9 @@ export default function App() {
       <Routes>
         <Route path="*" element={<Home posts={mostRecentPosts} />} />
         <Route path="/All" element={<All posts={mostRecentPosts}/>} />
-        <Route path="/Tech" element={<Tech posts={mostRecentPosts}/>} />
-        <Route path="/Science" element={<Science posts={mostRecentPosts}/>} />
+        <Route path="/Mind" element={<Mind posts={mostRecentPosts}/>} />
+        <Route path="/Human" element={<Human posts={mostRecentPosts}/>} />
+        <Route path="/Philosophy" element={<Philosophy posts={mostRecentPosts}/>} />
         <Route path="posts/:slug" element={<Post posts={mostRecentPosts} />} />
         <Route path="author/:slug" element={<Author posts={mostRecentPosts} />} />
       </Routes>

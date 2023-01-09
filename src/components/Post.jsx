@@ -6,7 +6,7 @@ export default function Post(props) {
     const posts = props.posts
     const post = posts.find(post => post.slug === slug);
     return(
-        <div className="max-w-lg mx-auto pt-20">
+        <div className="max-w-4xl mx-auto pt-20">
         <h1>This is {post.title}</h1>
         <h1>Written by <Link to={`/author/${post.author.slug}`}>{post.author.name}</Link></h1>
         <img src={post.photo.url} alt="" />

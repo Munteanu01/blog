@@ -6,7 +6,7 @@ export default function Post(props) {
     const author = posts.find(post => post.author.slug === slug);
     const postIds = author.author.posts.map(post => post.id);
     return(
-        <div>
+        <div className="mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl">
         <h1 className="text-4xl">{author.author.name}</h1>
         {posts.map((post) => {
             if (postIds.includes(post.id)) {
