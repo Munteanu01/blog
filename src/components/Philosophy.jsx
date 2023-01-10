@@ -9,9 +9,9 @@ export default function Philosophy(props) {
             {posts.map((post) => {
                 if (post.postType.type === "Philosophy") {
                 return (
-                <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto border-2 border-white" key={post.id}>
+                <div className="break-words w-full max-w-xs lg:max-w-sm mt-10 mx-auto" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
-                <div className='object-cover border-b-2 border-white'>
+                <div className='object-cover'>
                 <img className=' w-full' src={post.photo.url}></img>
                 </div>
                 <h1 className='text-2xl pt-2 text-center'>{post.title}</h1>
