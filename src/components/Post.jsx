@@ -6,11 +6,12 @@ export default function Post(props) {
     const posts = props.posts
     const post = posts.find(post => post.slug === slug);
     return(
-        <div className="mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl">
-        <h1>This is {post.title}</h1>
-        <h1>Written by <Link to={`/author/${post.author.slug}`}>{post.author.name}</Link></h1>
-        <img src={post.photo.url} alt="" />
-        <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content.html)}}></div>
+        <div className="mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl pt-20">
+        
+        <h1 className="text-4xl">{post.title}</h1>
+        <img className="max-w-2xl mx-auto" src={post.photo.url} alt="" />
+        <div className="text-center max-w-xl mx-auto" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content.html)}}></div>
+        <h1 className="ml-auto text-2xl">Written by <Link to={`/author/${post.author.slug}`}>{post.author.name}</Link></h1>
         </div>
     )
 }
