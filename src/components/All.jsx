@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Home(props) {
     const posts = props.posts
     return(
-        <div className='mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
+        <div className='mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
             <div className='sm:grid gap-5 grid-cols-2 lg:grid-cols-3 lg:gap-3'>
             {posts.map((post) => (
             <div className="break-words w-full sm:max-w-sm mt-10 mx-auto" key={post.id}>
