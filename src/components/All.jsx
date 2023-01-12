@@ -7,7 +7,7 @@ export default function Home(props) {
             <h1 className='text-5xl my-14'>All posts</h1>
             <div className='sm:grid gap-12 grid-cols-2'>
             {posts.map((post) => (
-            <div className={`mt-12 sm:mt-0 break-words w-full mx-auto ${posts.length % 2 !== 0 && post === posts[posts.length-1] ? 'col-span-2 xl:max-w-xl lg:max-w-lg md:max-w-md sm:max-w-sm' : ''}`} key={post.id}>
+            <div className={`mb-12 sm:mt-0 break-words w-full mx-auto ${posts.length % 2 !== 0 && post === posts[posts.length-1] ? 'col-span-2 xl:max-w-xl lg:max-w-lg md:max-w-md sm:max-w-sm' : ''}`} key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
                 <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
                 <h1 className='lg:text-3xl text-2xl pt-2'>{post.title}</h1>
