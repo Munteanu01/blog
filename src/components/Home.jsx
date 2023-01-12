@@ -10,22 +10,17 @@ export default function Home(props) {
             <Link to={`/posts/${mostRecentPost.slug}`} className="lg:col-span-2 col-span-1 my-auto">
                 <img className='md:max-w-full mx-auto sm:mx-0' src={mostRecentPost.photo.url} alt="" />
             </Link>
-            <div className='max-w-md sm:max-w-lg mx-auto col-span-1'>
-                <Link to={`/posts/${mostRecentPost.slug}`}><h1 className=''>{mostRecentPost.title}</h1></Link>
-                <p>{mostRecentPost.description}</p>
-                <Link to={`/author/${mostRecentPost.author.slug}`}><p>{mostRecentPost.author.name}</p></Link>
-                <p>{mostRecentPost.date}</p>
+            <div className='pl-5 mx-auto col-span-1'>
+                <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-5xl'>{mostRecentPost.title}</h1></Link>
+                <p className='text-3xl pt-20'>{mostRecentPost.description}</p>
             </div>
             {mostRecentPosts.map((post) => (
             <div className="break-words w-full sm:max-w-sm mt-10 mx-auto text-center" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
                 <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
-                <h1 className='pt-2'>{post.title}</h1>
-                <p>{post.description}</p>
-                <p>{post.author.name}</p>
-                <p className='pt-2'>{post.date}</p>
-
+                <h1 className='text-2xl pt-2'>{post.title}</h1>
                 </Link>
+                <p className='pt-1 text-lg'>{post.description}</p>
             </div>
             ))}
             </div>
