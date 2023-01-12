@@ -9,7 +9,6 @@ export default function Post(props) {
         <div className="mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl pt-20">
         
         <h1 className="text-4xl">{post.title}</h1>
-        <img className="max-w-2xl mx-auto" src={post.photo.url} alt="" />
         <div className="text-center max-w-xl mx-auto" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content.html)}}></div>
         <h1 className="ml-auto text-2xl">Written by <Link to={`/author/${post.author.slug}`}>{post.author.name}</Link></h1>
         </div>
