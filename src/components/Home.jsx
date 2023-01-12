@@ -10,22 +10,22 @@ export default function Home(props) {
             <Link to={`/posts/${mostRecentPost.slug}`} className="lg:col-span-2 col-span-1 my-auto">
                 <img className='md:max-w-full mx-auto sm:mx-0' src={mostRecentPost.photo.url} alt="" />
             </Link>
-            <div className='pl-5 mx-auto col-span-1'>
-                <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='text-5xl'>{mostRecentPost.title}</h1></Link>
-                <p className='text-3xl pt-20'>{mostRecentPost.description}</p>
+            <div className='sm:px-4 mx-auto col-span-1 text-center sm:text-left'>
+                <Link to={`/posts/${mostRecentPost.slug}`}><h1 className='lg:text-5xl sm:text-4xl text-2xl pt-2'>{mostRecentPost.title}</h1></Link>
+                <p className='lg:text-3xl text-xl lg:pt-20 sm:pt-10 pt-1'>{mostRecentPost.description}</p>
             </div>
             {mostRecentPosts.map((post) => (
             <div className="break-words w-full sm:max-w-sm mt-10 mx-auto text-center" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
                 <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
-                <h1 className='text-2xl pt-2'>{post.title}</h1>
+                <h1 className='lg:text-3xl text-2xl  pt-2'>{post.title}</h1>
                 </Link>
-                <p className='pt-1 text-lg'>{post.description}</p>
+                <p className='pt-1 text-xl'>{post.description}</p>
             </div>
             ))}
             </div>
             <form className='py-20 mt-28 md:max-w-md max-w-[290px] mx-auto grid md:grid-cols-3 grid-cols-1 gap-3'>
-            <input className="form-input md:col-span-2 py-4 px-5 text-gray-900 leading-5 focus:outline-none focus:shadow-outline-blue-500 dark:bg-white bg-black" id="email" type="email" placeholder="Your email"/>
+            <input className="form-input md:col-span-2 py-4 px-5 leading-5 text-center md:text-left text-white dark:text-black dark:bg-white bg-black" id="email" type="email" placeholder="Your email"/>
             <button className="dark:bg-white bg-black text-white dark:text-black py-3" type="submit">Subscribe</button>
             </form>
         </div>
