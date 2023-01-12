@@ -10,7 +10,7 @@ export default function Post(props) {
     return(
         <div className='mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
             <h1 className='text-5xl my-14'>{author.author.name}</h1>
-            <div className='sm:grid gap-7 grid-cols-2'>
+            <div className='sm:grid gap-7 grid-cols-2 text-center'>
             {filteredPosts.map((post) => (
                 <div className={`mb-12 sm:mt-0 break-words w-full mx-auto 
                 ${filteredPosts.length % 2 !== 0 && post === filteredPosts[filteredPosts.length-1] ? 'col-span-2 xl:max-w-xl lg:max-w-lg md:max-w-md sm:max-w-sm' : ''}`} key={post.id}>
