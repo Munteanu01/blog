@@ -18,7 +18,7 @@ export default function Home(props) {
             <div className="break-words w-full sm:max-w-sm mt-10 mx-auto text-center" key={post.id}>
                 <Link to={`/posts/${post.slug}`}>
                 <div className='object-cover'><img className=' w-full' src={post.photo.url}></img></div>
-                <h1 className='lg:text-3xl text-2xl  pt-2'>{post.title}</h1>
+                <h1 className='lg:text-3xl text-2xl pt-2'>{post.title}</h1>
                 </Link>
                 <p className='pt-1 text-xl'>{post.description}</p>
             </div>
