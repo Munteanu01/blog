@@ -10,6 +10,9 @@ import Human from "./components/Human"
 import Philosophy from "./components/Philosophy"
 import { GraphQLClient, gql } from 'graphql-request';
 import logoLight from './img/logo-light.png'
+import logoDark from './img/logo-dark.png'
+import menuLight from './img/menu-light.png'
+import menuDark from './img/menu-dark.png'
 export default function App() {
   const [mostRecentPosts, setMostRecentPosts] = useState([])
   useEffect(() => {
@@ -48,7 +51,7 @@ export default function App() {
   }, [])
   return (
     <>
-      <Navbar logoLight={logoLight} />
+      <Navbar logoLight={logoLight} logoDark={logoDark} menuLight={menuLight} menuDark={menuDark} />
       <Routes>
         <Route path="*" element={<Home posts={mostRecentPosts} />} />
         <Route path="/All" element={<All posts={mostRecentPosts}/>} />
