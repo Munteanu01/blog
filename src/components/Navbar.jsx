@@ -25,10 +25,10 @@ export default function Menu() {
     return (
     <nav className={`flex justify-between mx-auto xl:max-w-5xl lg:max-w-4xl md:max-w-2xl
         dark:bg-black bg-white sticky transition-all duration-[0.4s] ${visible ? "top-0" : "top-[-150px]"}`}>
-        <Link to="/Home" className="z-[2] hidden dark:block"><img className="w-[48px] ml-5 md:ml-0" src="../img/logo-light.png"></img></Link> 
-        <Link to="/Home" className="z-[2] block dark:hidden"><img className="w-[48px] ml-5 md:ml-0" src="../img/logo-dark.png"></img></Link> 
-        <button className="z-[2] md:hidden mr-5 hidden dark:block" onClick={toggleMenu}><img className="w-[24px]" src='/img/menu-light.png'alt=""/></button>
-        <button className="z-[2] md:hidden mr-5 block dark:hidden" onClick={toggleMenu}><img className="w-[24px]" src='/img/menu-dark.png'alt=""/></button>
+        <Link to="/Home" className="z-[2] hidden dark:block"><img className="w-[48px] ml-5 md:ml-0" src="/src/img/logo-light.png"></img></Link> 
+        <Link to="/Home" className="z-[2] block dark:hidden"><img className="w-[48px] ml-5 md:ml-0" src="src/img/logo-dark.png"></img></Link> 
+        <button className="z-[2] md:hidden mr-5 hidden dark:block" onClick={toggleMenu}><img className="w-[24px]" src='src/img/menu-light.png'alt=""/></button>
+        <button className="z-[2] md:hidden mr-5 block dark:hidden" onClick={toggleMenu}><img className="w-[24px]" src='src/img/menu-dark.png'alt=""/></button>
         <div className={`w-full md:w-auto  sm:py-7 md:flex md:py-0 md:items-center  
             dark:bg-black bg-white md:static absolute z-[1] md:z-auto transition-all duration-[0.4s] ease-in-out ${isOpen ? 'top-[40px] ':'top-[-80px]'}`}>
             <ul className="grid grid-cols-2 justify-between max-w-[200px] mx-auto sm:flex sm:max-w-md 
