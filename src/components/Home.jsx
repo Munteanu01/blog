@@ -7,7 +7,7 @@ export default function Home(props) {
     const mostRecentPost = posts[0];
     const mostRecentPosts = posts.slice(1, 7);
     return(
-        <div className='mt-20 mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
+        <div className='my-20 mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
             <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-3'>
             <Link to={`/posts/${mostRecentPost.slug}`} className="lg:col-span-2 col-span-1 my-auto">
                 <img className='md:max-w-full mx-auto sm:mx-0' src={mostRecentPost.photo.url} alt="" />
@@ -26,10 +26,6 @@ export default function Home(props) {
             </div>
             ))}
             </div>
-            <form className='py-20 mt-28 md:max-w-md max-w-[290px] mx-auto grid md:grid-cols-3 grid-cols-1 gap-3'>
-            <input className="form-input md:col-span-2 py-4 px-5 leading-5 text-center md:text-left text-white dark:text-black dark:bg-white bg-black" id="email" type="email" placeholder="Your email"/>
-            <button className="dark:bg-white bg-black text-white dark:text-black py-3" type="submit">Subscribe</button>
-            </form>
         </div>
     )
 }
