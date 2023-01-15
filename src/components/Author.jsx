@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 
-export default function Post(props) {
+export default function Author(props) {
     const {slug} = useParams()
     const posts = props.posts
     const author = posts.find(post => post.author.slug === slug);

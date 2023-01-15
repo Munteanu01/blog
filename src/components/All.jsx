@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-export default function Home(props) {
+export default function All(props) {
     const posts = props.posts
     return(
         <div className='mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
