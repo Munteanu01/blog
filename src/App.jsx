@@ -49,17 +49,22 @@ export default function App() {
     }
     fetchData()
   }, [])
+  const readingTime = (content) => {
+    const words = content.split(" ").length;
+    const minutes = Math.round(words / 130);
+    return <p>{minutes} min read</p>;
+}
   return (
     <>
       <Navbar logoLight={logoLight} logoDark={logoDark} menuLight={menuLight} menuDark={menuDark} />
       <Routes>
-        <Route path="*" element={<Home posts={mostRecentPosts} />} />
-        <Route path="/All" element={<All posts={mostRecentPosts}/>} />
-        <Route path="/Mind" element={<Mind posts={mostRecentPosts}/>} />
-        <Route path="/Human" element={<Human posts={mostRecentPosts}/>} />
-        <Route path="/Philosophy" element={<Philosophy posts={mostRecentPosts}/>} />
-        <Route path="posts/:slug" element={<Post posts={mostRecentPosts} />} />
-        <Route path="author/:slug" element={<Author posts={mostRecentPosts} />} />
+        <Route path="*" element={<Home posts={mostRecentPosts} readingTime={readingTime} />} />
+        <Route path="/All" element={<All posts={mostRecentPosts} readingTime={readingTime}/>} />
+        <Route path="/Mind" element={<Mind posts={mostRecentPosts}/>} readingTime={readingTime} />
+        <Route path="/Human" element={<Human posts={mostRecentPosts}/>} readingTime={readingTime} />
+        <Route path="/Philosophy" element={<Philosophy posts={mostRecentPosts} readingTime={readingTime}/>} />
+        <Route path="posts/:slug" element={<Post posts={mostRecentPosts}/>} />
+        <Route path="author/:slug" element={<Author posts={mostRecentPosts} readingTime={readingTime}/>} />
       </Routes>
     </>
   );

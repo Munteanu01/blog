@@ -13,6 +13,7 @@ export default function All(props) {
                 <h1 className='lg:text-3xl text-2xl pt-2'>{post.title}</h1>
                 </Link>
                 <p className='pt-1 text-xl'>{post.description}</p>
+                {props.readingTime(post.content.html)}
             </div>
             ))}
             </div>
