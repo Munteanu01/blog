@@ -52,14 +52,21 @@ export default function App() {
   const readingTime = (content) => {
     const words = content.split(" ").length;
     const minutes = Math.round(words / 130);
-    return <p>{minutes} min read</p>;
+    return <p>{minutes} min</p>;
+  }
+  const formatDate = (date) => {
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+  });
+  return formattedDate;
 }
   return (
     <>
       <Navbar logoLight={logoLight} logoDark={logoDark} menuLight={menuLight} menuDark={menuDark} />
       <Routes>
-        <Route path="*" element={<Home posts={mostRecentPosts} readingTime={readingTime} />} />
-        <Route path="/All" element={<All posts={mostRecentPosts} readingTime={readingTime}/>} />
+        <Route path="*" element={<Home posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>} />
+        <Route path="/All" element={<All posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>} />
         <Route path="/Mind" element={<Mind posts={mostRecentPosts}/>} readingTime={readingTime} />
         <Route path="/Human" element={<Human posts={mostRecentPosts}/>} readingTime={readingTime} />
         <Route path="/Philosophy" element={<Philosophy posts={mostRecentPosts} readingTime={readingTime}/>} />

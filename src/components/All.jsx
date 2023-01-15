@@ -13,7 +13,10 @@ export default function All(props) {
                 <h1 className='lg:text-3xl text-2xl pt-2'>{post.title}</h1>
                 </Link>
                 <p className='pt-1 text-xl'>{post.description}</p>
+                <div className='flex justify-between mx-5 text-[#797979]'>
                 {props.readingTime(post.content.html)}
+                {props.formatDate(post.date)}
+                </div>
             </div>
             ))}
             </div>
