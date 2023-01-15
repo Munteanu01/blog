@@ -67,11 +67,11 @@ export default function App() {
       <Routes>
         <Route path="*" element={<Home posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>} />
         <Route path="/All" element={<All posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>} />
-        <Route path="/Mind" element={<Mind posts={mostRecentPosts}/>} readingTime={readingTime} />
-        <Route path="/Human" element={<Human posts={mostRecentPosts}/>} readingTime={readingTime} />
-        <Route path="/Philosophy" element={<Philosophy posts={mostRecentPosts} readingTime={readingTime}/>} />
+        <Route path="/Mind" element={<Mind posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>}/>
+        <Route path="/Human" element={<Human posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>} />
+        <Route path="/Philosophy" element={<Philosophy posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>} />
         <Route path="posts/:slug" element={<Post posts={mostRecentPosts}/>} />
-        <Route path="author/:slug" element={<Author posts={mostRecentPosts} readingTime={readingTime}/>} />
+        <Route path="author/:slug" element={<Author posts={mostRecentPosts} readingTime={readingTime} formatDate={formatDate}/>} />
       </Routes>
     </>
   );

@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 export default function Home(props) {
     const posts = props.posts
-    if(!posts) return <div>Loading...</div>
-    if(!posts.length) return <div>No posts found</div>
+    if(!posts) return <div></div>
+    if(!posts.length) return <div></div>
     const mostRecentPost = posts[0];
     const mostRecentPosts = posts.slice(1, 7);
     return(
