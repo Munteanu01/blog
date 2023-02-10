@@ -9,10 +9,10 @@ import Mind from "./pages/Mind"
 import Human from "./pages/Human"
 import Philosophy from "./pages/Philosophy"
 import { GraphQLClient, gql } from 'graphql-request';
-import logoLight from '../public/logo-light.png'
-import logoDark from '../public/logo-dark.png'
-import menuLight from '../public/menu-light.png'
-import menuDark from '../public/menu-dark.png'
+import logoLight from '/src/icons/logo-light.png'
+import logoDark from '/src/icons/logo-dark.png'
+import menuLight from '/src/icons/menu-light.png'
+import menuDark from '/src/icons/menu-dark.png'
 export default function App() {
   const [mostRecentPosts, setMostRecentPosts] = useState([])
   useEffect(() => {
