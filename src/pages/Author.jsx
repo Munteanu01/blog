@@ -5,8 +5,12 @@ export default function Author(props) {
     const {slug} = useParams()
     const posts = props.posts
     const author = posts.find(post => post.author.slug === slug);
-    const postIds = author.author.posts.map(post => post.id);
-    const filteredPosts = posts.filter(post => postIds.includes(post.id))
+ 
+    
+    if(author){
+        const postIds = author.author.posts.map(post => post.id);
+        const filteredPosts = posts.filter(post => postIds.includes(post.id))
+        
     return(
         <div className='mx-auto px-5 md:px-0 xl:max-w-5xl lg:max-w-4xl md:max-w-2xl'>
             <h1 className='text-5xl my-14'>{author.author.name}</h1>
@@ -28,4 +32,5 @@ export default function Author(props) {
             </div>
         </div>
     )
+    }
 }

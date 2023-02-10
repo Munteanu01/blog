@@ -1,5 +1,5 @@
 import React from "react";
-import FilteredPosts from './FilteredPosts';
+import FilteredPosts from "../components/FilteredPosts";
 export default function Mind(props) {
     const posts = props.posts
     const readingTime = props.readingTime;

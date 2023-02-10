@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from "./components/Home"
 import Navbar from "./components/Navbar"
-import All from "./components/All"
 import Post from "./components/Post"
-import Author from "./components/Author"
-import Mind from "./components/Mind"
-import Human from "./components/Human"
-import Philosophy from "./components/Philosophy"
+import Home from "./pages/Home"
+import All from "./pages/All"
+import Author from "./pages/Author"
+import Mind from "./pages/Mind"
+import Human from "./pages/Human"
+import Philosophy from "./pages/Philosophy"
 import { GraphQLClient, gql } from 'graphql-request';
 import logoLight from '../public/logo-light.png'
 import logoDark from '../public/logo-dark.png'
